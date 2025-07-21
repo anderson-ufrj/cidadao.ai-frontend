@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "features": "Features",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Transparency",
+    "subtitle": "with Artificial Intelligence",
+    "description": "Revolutionary platform that democratizes access to Brazilian public data analysis, using advanced AI to detect anomalies and promote government transparency.",
+    "explore": "Explore Platform",
+    "demo": "View Demo"
+  },
+  "stats": {
+    "contracts": "Contracts Analyzed",
+    "expenses": "Expense Records",
+    "precision": "F1-Score Precision",
+    "response": "Response Time"
+  },
+  "features": {
+    "title": "Key Features",
+    "multiAgent": {
+      "title": "Multi-Agent AI",
+      "description": "Distributed system with 8 specialized agents for automated public data analysis."
+    },
+    "anomaly": {
+      "title": "Anomaly Detection",
+      "description": "Advanced algorithms to identify suspicious patterns in public contracts and expenses."
+    },
+    "visualization": {
+      "title": "Interactive Visualization",
+      "description": "Dynamic dashboards and reports comprehensible to all citizens."
+    }
+  },
+  "about": {
+    "title": "About the Project",
+    "description": "Cidadão.AI is an innovative platform that combines advanced artificial intelligence with Brazilian public data to promote government transparency and accountability. We use cutting-edge technologies to make public oversight accessible to all citizens."
+  },
+  "footer": {
+    "tagline": "Promoting transparency and democracy through technology"
+  }
+}

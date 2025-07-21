@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "features": "Recursos",
+    "about": "Sobre"
+  },
+  "hero": {
+    "title": "Transparência",
+    "subtitle": "com Inteligência Artificial",
+    "description": "Plataforma revolucionária que democratiza o acesso à análise de dados públicos brasileiros, utilizando IA avançada para detectar anomalias e promover transparência governamental.",
+    "explore": "Explorar Plataforma",
+    "demo": "Ver Demonstração"
+  },
+  "stats": {
+    "contracts": "Contratos Analisados",
+    "expenses": "Registros de Despesas",
+    "precision": "Precisão F1-Score",
+    "response": "Tempo de Resposta"
+  },
+  "features": {
+    "title": "Recursos Principais",
+    "multiAgent": {
+      "title": "IA Multi-Agente",
+      "description": "Sistema distribuído com 8 agentes especializados para análise automatizada de dados públicos."
+    },
+    "anomaly": {
+      "title": "Detecção de Anomalias",
+      "description": "Algoritmos avançados para identificar padrões suspeitos em contratos e despesas públicas."
+    },
+    "visualization": {
+      "title": "Visualização Interativa",
+      "description": "Dashboards dinâmicos e relatórios compreensíveis para todos os cidadãos."
+    }
+  },
+  "about": {
+    "title": "Sobre o Projeto",
+    "description": "O Cidadão.AI é uma plataforma inovadora que combina inteligência artificial avançada com dados públicos brasileiros para promover transparência e accountability governamental. Utilizamos tecnologias de ponta para tornar a fiscalização pública acessível a todos os cidadãos."
+  },
+  "footer": {
+    "tagline": "Promovendo transparência e democracia através da tecnologia"
+  }
+}
