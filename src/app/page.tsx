@@ -121,22 +121,22 @@ export default function Home() {
       <section className="px-6 py-20 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group p-8 bg-gradient-to-br from-emerald-50 to-white rounded-3xl border border-emerald-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 gradient-emerald-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-3xl border border-purple-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🔍</span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Análise Inteligente</h3>
               <p className="text-gray-600 leading-relaxed">Detecta anomalias em contratos e despesas públicas usando IA avançada.</p>
             </div>
-            <div className="group p-8 bg-gradient-to-br from-blue-50 to-white rounded-3xl border border-blue-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 gradient-emerald-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="group p-8 bg-gradient-to-br from-orange-50 to-white rounded-3xl border border-orange-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">📊</span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Relatórios Visuais</h3>
               <p className="text-gray-600 leading-relaxed">Gráficos e dashboards interativos para visualizar dados públicos.</p>
             </div>
-            <div className="group p-8 bg-gradient-to-br from-yellow-50 to-white rounded-3xl border border-yellow-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 gradient-green-yellow rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="group p-8 bg-gradient-to-br from-cyan-50 to-white rounded-3xl border border-cyan-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏛️</span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Transparência Total</h3>

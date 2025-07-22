@@ -84,6 +84,32 @@ export default function Credits() {
             </div>
           </div>
 
+          <div className="bg-indigo-50 p-6 rounded-lg">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">📚 Notas de Pesquisa do Autor</h2>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-200">
+                <img 
+                  src="/author.jpeg" 
+                  alt="Anderson Henrique da Silva" 
+                  className="w-16 h-16 rounded-full object-cover shadow-lg"
+                />
+                <div className="flex-1">
+                  <p className="font-medium text-gray-800">Notas de Pesquisa Completas</p>
+                  <p className="text-sm text-gray-600 mb-2">Documentação detalhada do processo de pesquisa, metodologia e descobertas durante o desenvolvimento do projeto.</p>
+                  <button 
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
+                    onClick={() => window.open('/Notas-de-Pesquisa.pdf', '_blank')}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                    </svg>
+                    Visualizar PDF
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="bg-yellow-50 p-6 rounded-lg">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🌐 Links Oficiais</h2>
             <div className="space-y-4 text-sm">
@@ -100,8 +126,9 @@ export default function Credits() {
               </div>
               
               <div>
-                <p className="font-medium text-gray-800">Documentação Técnica</p>
+                <p className="font-medium text-gray-800">Documentação Técnica dos Algoritmos</p>
                 <a href="https://anderson-ufrj.github.io/cidadao.ai-backend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block">anderson-ufrj.github.io/cidadao.ai-backend</a>
+                <p className="text-xs text-gray-500">Documentação completa dos algoritmos de IA e arquitetura do sistema backend.</p>
               </div>
               
               <div>
