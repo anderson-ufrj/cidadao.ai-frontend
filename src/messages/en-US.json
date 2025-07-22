@@ -7,8 +7,8 @@
     "title": "Transparency",
     "subtitle": "with Artificial Intelligence",
     "description": "Revolutionary platform that democratizes access to Brazilian public data analysis, using advanced AI to detect anomalies and promote government transparency.",
-    "explore": "Explore Platform",
-    "demo": "View Demo"
+    "dashboards": "Access Dashboards",
+    "chat": "Chat with our model"
   },
   "stats": {
     "contracts": "Contracts Analyzed",

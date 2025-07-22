@@ -52,17 +52,43 @@ export default function Home() {
           <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto font-medium">
             {t('hero.description')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="group px-10 py-5 gradient-emerald-blue text-white font-bold rounded-2xl hover-lift shadow-2xl transform transition-all duration-300 text-lg">
-              <span className="flex items-center gap-3">
-                {t('hero.explore')}
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+          <div className="flex flex-col lg:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
+            {/* Dashboard Access Button */}
+            <button className="group relative px-12 py-6 gradient-emerald-blue text-white font-bold rounded-3xl hover-lift shadow-2xl transform transition-all duration-300 text-lg min-w-[300px] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="relative flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center w-10 h-10 bg-white/20 rounded-2xl group-hover:scale-110 transition-transform">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <div className="text-xl font-bold">{t('hero.dashboards')}</div>
+                  <div className="text-sm opacity-90 font-medium">Visualizações e análises</div>
+                </div>
+                <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </span>
             </button>
-            <button className="px-10 py-5 bg-white/80 backdrop-blur-sm text-emerald-700 font-bold rounded-2xl border-2 border-emerald-200 hover:border-emerald-300 hover:bg-white hover-lift shadow-lg transition-all duration-300 text-lg">
-              📊 Ver Demo
+
+            {/* Chat with Model Button */}
+            <button className="group relative px-12 py-6 bg-white/90 backdrop-blur-sm text-emerald-800 font-bold rounded-3xl border-3 border-emerald-200 hover:border-emerald-400 hover:bg-white hover-lift shadow-2xl transition-all duration-300 text-lg min-w-[300px] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="relative flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center w-10 h-10 gradient-emerald-blue text-white rounded-2xl group-hover:scale-110 transition-transform">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <div className="text-xl font-bold">{t('hero.chat')}</div>
+                  <div className="text-sm opacity-70 font-medium">IA conversacional</div>
+                </div>
+                <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </span>
             </button>
           </div>
         </div>
