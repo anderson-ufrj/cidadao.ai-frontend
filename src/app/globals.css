@@ -279,10 +279,10 @@ body {
 .section-yellow { background-color: #fefce8; }
 .section-white { background-color: #ffffff; }
 
-[data-theme="dark"] .section-gray { background-color: #374151; }
-[data-theme="dark"] .section-blue { background-color: #1e3a8a; opacity: 0.3; }
-[data-theme="dark"] .section-green { background-color: #14532d; opacity: 0.3; }
-[data-theme="dark"] .section-purple { background-color: #581c87; opacity: 0.3; }
-[data-theme="dark"] .section-indigo { background-color: #312e81; opacity: 0.3; }
-[data-theme="dark"] .section-yellow { background-color: #713f12; opacity: 0.3; }
+[data-theme="dark"] .section-gray { background-color: #4b5563; }
+[data-theme="dark"] .section-blue { background-color: #334155; border-left: 4px solid #3b82f6; }
+[data-theme="dark"] .section-green { background-color: #334155; border-left: 4px solid #10b981; }
+[data-theme="dark"] .section-purple { background-color: #334155; border-left: 4px solid #8b5cf6; }
+[data-theme="dark"] .section-indigo { background-color: #334155; border-left: 4px solid #6366f1; }
+[data-theme="dark"] .section-yellow { background-color: #334155; border-left: 4px solid #f59e0b; }
 [data-theme="dark"] .section-white { background-color: #4b5563; }
