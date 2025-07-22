@@ -2,19 +2,16 @@ import Link from 'next/link';
 
 export default function Credits() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50">
       {/* Navigation */}
-      <nav className="px-6 py-4 flex justify-between items-center bg-white border-b border-gray-200">
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">🏛️</span>
+      <nav className="px-6 py-4 flex justify-between items-center bg-white/80 backdrop-blur-sm border-b border-emerald-200 sticky top-0 z-50">
+        <Link href="/" className="flex items-center space-x-3">
+          <div className="w-10 h-10 gradient-emerald-blue rounded-xl flex items-center justify-center hover-scale shadow-lg">
+            <span className="text-white font-bold text-lg">🏛️</span>
           </div>
-          <span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="font-bold text-2xl gradient-text-emerald-blue tracking-tight">
             Cidadão.AI
           </span>
-        </Link>
-        <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">
-          ← Voltar
         </Link>
       </nav>
 
@@ -118,6 +115,19 @@ export default function Credits() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Back Button */}
+        <div className="text-center mt-12">
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm text-emerald-700 font-bold rounded-2xl border-2 border-emerald-200 hover:border-emerald-300 hover:bg-white hover-lift shadow-lg transition-all duration-300"
+          >
+            <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            Voltar para a página inicial
+          </Link>
         </div>
       </div>
     </main>

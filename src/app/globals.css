@@ -48,8 +48,45 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark theme using data attribute */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #f3f4f6;
+  --muted: #111827;
+  --muted-foreground: #9ca3af;
+  --border: #374151;
+  --surface: #1f2937;
+  --surface-hover: #374151;
+  
+  /* Dark theme specific colors */
+  --primary-green: #34d399;
+  --primary-blue: #60a5fa;
+  --primary-yellow: #fbbf24;
+  --accent-emerald: #10b981;
+  --accent-indigo: #818cf8;
+}
+
+/* Light theme (default) */
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+  --border: #e5e7eb;
+  --surface: #ffffff;
+  --surface-hover: #f3f4f6;
+  
+  /* Light theme specific colors */
+  --primary-green: #10b981;
+  --primary-blue: #3b82f6;
+  --primary-yellow: #f59e0b;
+  --accent-emerald: #059669;
+  --accent-indigo: #4f46e5;
+}
+
+/* Fallback for when no theme is set */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --background: #0a0a0a;
     --foreground: #f3f4f6;
     --muted: #111827;
@@ -101,9 +138,9 @@ body {
   color: transparent;
 }
 
-/* Smooth transitions */
+/* Smooth transitions including theme changes */
 * {
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 /* Interactive hover effects */
@@ -142,4 +179,42 @@ body {
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient-shift 3s ease infinite;
+}
+
+/* Theme-aware utility classes */
+.bg-theme {
+  background-color: var(--background);
+}
+
+.text-theme {
+  color: var(--foreground);
+}
+
+.border-theme {
+  border-color: var(--border);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-surface-hover:hover {
+  background-color: var(--surface-hover);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.bg-muted {
+  background-color: var(--muted);
+}
+
+/* Theme-aware background gradients */
+.bg-gradient-theme {
+  background: linear-gradient(135deg, var(--background) 0%, var(--muted) 100%);
+}
+
+.bg-gradient-theme-soft {
+  background: linear-gradient(135deg, var(--background) 0%, var(--surface) 50%, var(--muted) 100%);
 }
