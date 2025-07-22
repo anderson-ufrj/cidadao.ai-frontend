@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ThemeToggle from '@/components/ThemeToggle';
 
 interface HealthResponse {
   status: string;
@@ -85,6 +86,11 @@ export default function TestApiPage() {
     <div className="min-h-screen py-12 transition-all duration-300" style={{background: 'linear-gradient(to bottom right, var(--bg-primary), var(--bg-secondary), var(--bg-tertiary))'}}>
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
+          {/* Navigation */}
+          <div className="flex justify-end mb-8">
+            <ThemeToggle />
+          </div>
+
           <div className="text-center mb-12">
             <div className="inline-block p-4 gradient-emerald-blue rounded-2xl shadow-lg mb-6">
               <span className="text-3xl">🧪</span>
@@ -183,7 +189,7 @@ export default function TestApiPage() {
           {/* Quick Links */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <a 
-              href={`${apiUrl}/docs`}
+              href="https://anderson-ufrj.github.io/cidadao.ai-docs/"
               target="_blank" 
               rel="noopener noreferrer"
               className="group p-6 rounded-2xl hover-lift transition-all duration-300 backdrop-blur-sm" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', border: '1px solid var(--border)'}}
@@ -192,23 +198,8 @@ export default function TestApiPage() {
                 <div className="w-12 h-12 bg-blue-500 text-white rounded-xl flex items-center justify-center mx-auto mb-3">
                   📚
                 </div>
-                <h3 className="font-bold mb-1 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Swagger UI</h3>
-                <p className="text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Documentação interativa</p>
-              </div>
-            </a>
-
-            <a 
-              href={`${apiUrl}/redoc`}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group p-6 rounded-2xl hover-lift transition-all duration-300 backdrop-blur-sm" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', border: '1px solid var(--border)'}}
-            >
-              <div className="text-center">
-                <div className="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center mx-auto mb-3">
-                  📖
-                </div>
-                <h3 className="font-bold mb-1 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>ReDoc</h3>
-                <p className="text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Documentação alternativa</p>
+                <h3 className="font-bold mb-1 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Hub de Documentação</h3>
+                <p className="text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Documentação completa da API</p>
               </div>
             </a>
 
@@ -224,6 +215,21 @@ export default function TestApiPage() {
                 <p className="text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Verificar novamente</p>
               </div>
             </button>
+
+            <a 
+              href={`${apiUrl}/redoc`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group p-6 rounded-2xl hover-lift transition-all duration-300 backdrop-blur-sm" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', border: '1px solid var(--border)'}}
+            >
+              <div className="text-center">
+                <div className="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center mx-auto mb-3">
+                  📖
+                </div>
+                <h3 className="font-bold mb-1 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>ReDoc</h3>
+                <p className="text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Documentação alternativa</p>
+              </div>
+            </a>
           </div>
 
           <div className="text-center mt-12">
