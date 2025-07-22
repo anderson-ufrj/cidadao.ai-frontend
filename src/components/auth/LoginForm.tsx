@@ -41,7 +41,7 @@ export function LoginForm({ onSuccess, onRegisterClick }: LoginFormProps) {
     try {
       await login(data as LoginCredentials);
       onSuccess?.();
-    } catch (error) {
+    } catch {
       // Error is handled by the store
     }
   };

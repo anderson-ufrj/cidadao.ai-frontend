@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { systemService } from '@/lib/api/services';
 import { useAuthStore } from '@/stores/authStore';
@@ -8,7 +9,7 @@ import { LoginForm } from '@/components/auth/LoginForm';
 import { toast } from 'sonner';
 
 export default function TestApiPage() {
-  const [healthStatus, setHealthStatus] = useState<any>(null);
+  const [healthStatus, setHealthStatus] = useState<{ status: string; timestamp: string } | { error: string } | null>(null);
   const [isTestingHealth, setIsTestingHealth] = useState(false);
   const { user, isAuthenticated, logout } = useAuthStore();
 
@@ -139,12 +140,12 @@ export default function TestApiPage() {
           </div>
 
           <div className="text-center mt-8">
-            <a
+            <Link
               href="/"
               className="text-blue-600 hover:underline"
             >
               ← Voltar para a página inicial
-            </a>
+            </Link>
           </div>
         </div>
       </div>

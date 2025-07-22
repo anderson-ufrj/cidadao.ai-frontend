@@ -82,7 +82,7 @@ export interface Finding {
   severity: 'low' | 'medium' | 'high' | 'critical';
   title: string;
   description: string;
-  evidence: Record<string, any>;
+  evidence: Record<string, unknown>;
   confidence: number;
   impact_assessment: string;
   recommendations: string[];
@@ -92,7 +92,7 @@ export interface Finding {
 export interface AnalysisRequest {
   investigation_ids: string[];
   analysis_type: 'trends' | 'correlations' | 'patterns' | 'comparisons';
-  parameters: Record<string, any>;
+  parameters: Record<string, unknown>;
 }
 
 export interface Analysis {
@@ -109,15 +109,15 @@ export interface AnalysisResult {
   charts: ChartData[];
   insights: Insight[];
   summary: string;
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
 }
 
 export interface ChartData {
   id: string;
   type: 'line' | 'bar' | 'pie' | 'scatter' | 'heatmap';
   title: string;
-  data: any;
-  config: Record<string, any>;
+  data: unknown;
+  config: Record<string, unknown>;
 }
 
 export interface Insight {

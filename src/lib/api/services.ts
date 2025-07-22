@@ -82,15 +82,15 @@ export const analysisService = {
     return apiClient.get<Analysis[]>(API_ENDPOINTS.ANALYSIS.LIST);
   },
 
-  async getTrends(params?: Record<string, any>): Promise<any> {
+  async getTrends(params?: Record<string, unknown>): Promise<unknown> {
     return apiClient.get(API_ENDPOINTS.ANALYSIS.TRENDS, { params });
   },
 
-  async getCorrelations(params?: Record<string, any>): Promise<any> {
+  async getCorrelations(params?: Record<string, unknown>): Promise<unknown> {
     return apiClient.get(API_ENDPOINTS.ANALYSIS.CORRELATIONS, { params });
   },
 
-  async getPatterns(params?: Record<string, any>): Promise<any> {
+  async getPatterns(params?: Record<string, unknown>): Promise<unknown> {
     return apiClient.get(API_ENDPOINTS.ANALYSIS.PATTERNS, { params });
   },
 };
@@ -134,7 +134,7 @@ export const systemService = {
     return apiClient.healthCheck();
   },
 
-  async getApiInfo(): Promise<any> {
+  async getApiInfo(): Promise<unknown> {
     return apiClient.get(API_ENDPOINTS.INFO);
   },
 };

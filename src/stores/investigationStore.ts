@@ -47,10 +47,10 @@ export const useInvestigationStore = create<InvestigationStore>()((set, get) => 
       }));
 
       return investigation;
-    } catch (error: any) {
+    } catch (error: unknown) {
       set({
         isLoading: false,
-        error: error.response?.data?.detail || 'Failed to start investigation',
+        error: (error as { response?: { data?: { detail?: string } } }).response?.data?.detail || 'Failed to start investigation',
       });
       throw error;
     }
@@ -66,9 +66,9 @@ export const useInvestigationStore = create<InvestigationStore>()((set, get) => 
         ),
         currentInvestigation: state.currentInvestigation?.id === id ? investigation : state.currentInvestigation,
       }));
-    } catch (error: any) {
+    } catch (error: unknown) {
       set({
-        error: error.response?.data?.detail || 'Failed to get investigation status',
+        error: (error as { response?: { data?: { detail?: string } } }).response?.data?.detail || 'Failed to get investigation status',
       });
     }
   },
@@ -86,10 +86,10 @@ export const useInvestigationStore = create<InvestigationStore>()((set, get) => 
         currentInvestigation: state.currentInvestigation?.id === id ? investigation : state.currentInvestigation,
         isLoading: false,
       }));
-    } catch (error: any) {
+    } catch (error: unknown) {
       set({
         isLoading: false,
-        error: error.response?.data?.detail || 'Failed to get investigation results',
+        error: (error as { response?: { data?: { detail?: string } } }).response?.data?.detail || 'Failed to get investigation results',
       });
     }
   },
@@ -104,10 +104,10 @@ export const useInvestigationStore = create<InvestigationStore>()((set, get) => 
         investigations,
         isLoading: false,
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       set({
         isLoading: false,
-        error: error.response?.data?.detail || 'Failed to load investigations',
+        error: (error as { response?: { data?: { detail?: string } } }).response?.data?.detail || 'Failed to load investigations',
       });
     }
   },
@@ -124,9 +124,9 @@ export const useInvestigationStore = create<InvestigationStore>()((set, get) => 
           ? { ...state.currentInvestigation, status: 'cancelled' as const }
           : state.currentInvestigation,
       }));
-    } catch (error: any) {
+    } catch (error: unknown) {
       set({
-        error: error.response?.data?.detail || 'Failed to cancel investigation',
+        error: (error as { response?: { data?: { detail?: string } } }).response?.data?.detail || 'Failed to cancel investigation',
       });
     }
   },
@@ -156,14 +156,15 @@ export const useInvestigationStore = create<InvestigationStore>()((set, get) => 
     set({ isStreaming: true });
 
     // Store event source for cleanup
-    (window as any).__investigationEventSource = eventSource;
+    (window as unknown as { __investigationEventSource?: EventSource }).__investigationEventSource = eventSource;
   },
 
   stopStreaming: () => {
-    const eventSource = (window as any).__investigationEventSource;
+    const windowWithEventSource = window as unknown as { __investigationEventSource?: EventSource };
+    const eventSource = windowWithEventSource.__investigationEventSource;
     if (eventSource) {
       eventSource.close();
-      delete (window as any).__investigationEventSource;
+      delete windowWithEventSource.__investigationEventSource;
     }
     set({ isStreaming: false });
   },

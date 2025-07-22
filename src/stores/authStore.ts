@@ -58,10 +58,10 @@ export const useAuthStore = create<AuthStore>()(
             isLoading: false, 
             error: null 
           });
-        } catch (error: any) {
+        } catch (error: unknown) {
           set({ 
             isLoading: false, 
-            error: error.response?.data?.detail || 'Login failed' 
+            error: (error as { response?: { data?: { detail?: string } } }).response?.data?.detail || 'Login failed' 
           });
           throw error;
         }
@@ -91,10 +91,10 @@ export const useAuthStore = create<AuthStore>()(
             isLoading: false, 
             error: null 
           });
-        } catch (error: any) {
+        } catch (error: unknown) {
           set({ 
             isLoading: false, 
-            error: error.response?.data?.detail || 'Registration failed' 
+            error: (error as { response?: { data?: { detail?: string } } }).response?.data?.detail || 'Registration failed' 
           });
           throw error;
         }
@@ -102,8 +102,9 @@ export const useAuthStore = create<AuthStore>()(
 
       logout: () => {
         // Clear API client token
-        const { apiClient } = require('@/lib/api/client');
-        apiClient.clearAuthToken();
+        import('@/lib/api/client').then(({ apiClient }) => {
+          apiClient.clearAuthToken();
+        });
         
         // Clear local storage
         if (typeof window !== 'undefined') {
@@ -151,7 +152,7 @@ export const useAuthStore = create<AuthStore>()(
             isLoading: false,
             error: null 
           });
-        } catch (error) {
+        } catch {
           // Token invalid, clear state
           get().logout();
           set({ isLoading: false });
@@ -159,8 +160,9 @@ export const useAuthStore = create<AuthStore>()(
       },
 
       setToken: (token: string) => {
-        const { apiClient } = require('@/lib/api/client');
-        apiClient.setAuthToken(token);
+        import('@/lib/api/client').then(({ apiClient }) => {
+          apiClient.setAuthToken(token);
+        });
         set({ token });
       },
 
