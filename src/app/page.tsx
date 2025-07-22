@@ -58,14 +58,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Credits Link (bottom left) */}
-      <div className="fixed bottom-6 left-6 z-40">
+      {/* Navigation Links (bottom) */}
+      <div className="fixed bottom-6 left-6 z-40 flex flex-col space-y-2">
         <a
           href="/credits"
           className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 text-sm font-medium"
           title="Ver créditos"
         >
           📜 Créditos
+        </a>
+        <a
+          href="/test-api"
+          className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 text-sm font-medium"
+          title="Testar API"
+        >
+          🧪 Teste API
         </a>
       </div>
     </main>
