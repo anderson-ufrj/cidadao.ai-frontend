@@ -1,10 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Sobre() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50">
+    <main className="min-h-screen transition-all duration-300" style={{background: 'linear-gradient(to bottom right, var(--bg-primary), var(--bg-secondary), var(--bg-tertiary))'}}>
       {/* Navigation */}
-      <nav className="px-6 py-4 flex justify-between items-center bg-white/80 backdrop-blur-sm border-b border-emerald-200 sticky top-0 z-50">
+      <nav className="px-6 py-4 flex justify-between items-center backdrop-blur-sm border-b sticky top-0 z-50 transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', borderColor: 'var(--border)'}}>
         <Link href="/" className="flex items-center space-x-3">
           <div className="w-10 h-10 gradient-emerald-blue rounded-xl flex items-center justify-center hover-scale shadow-lg">
             <span className="text-white font-bold text-lg">🏛️</span>
@@ -13,6 +16,9 @@ export default function Sobre() {
             Cidadão.AI
           </span>
         </Link>
+        <div className="flex space-x-4">
+          <ThemeToggle />
+        </div>
       </nav>
 
       {/* Credits Content */}
@@ -70,7 +76,7 @@ export default function Sobre() {
           <div className="section-green p-6 rounded-lg transition-all duration-300">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🔐 Licenças e Direitos</h2>
             <div className="space-y-2 text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
-              <p>• Código-fonte licenciado sob Apache License 2.0, exceto onde indicado.</p>
+              <p>• Código-fonte licenciado sob Apache License 2.0.</p>
               <p>• Todos os modelos e bibliotecas de terceiros respeitam suas respectivas licenças.</p>
               <p>• Os dados públicos utilizados seguem a Lei de Acesso à Informação (Lei nº 12.527/2011).</p>
               <p>• Projeto 100% proprietário. Uso não autorizado do conteúdo pode violar direitos autorais.</p>
