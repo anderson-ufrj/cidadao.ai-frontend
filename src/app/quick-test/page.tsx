@@ -10,47 +10,33 @@ interface HealthResponse {
   version?: string;
 }
 
-export default function TestApiPage() {
+export default function QuickTestPage() {
   const [healthData, setHealthData] = useState<HealthResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [apiUrl, setApiUrl] = useState<string>('');
+
+  // Force the correct URL - hardcoded to avoid env var issues
+  const API_URL = 'https://neural-thinker-cidadao-ai-backend.hf.space';
 
   useEffect(() => {
-    // Ensure we use the correct HF Spaces app URL, not the space URL
-    let baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://neural-thinker-cidadao-ai-backend.hf.space';
-    
-    // Fix common URL mistakes
-    if (baseUrl.includes('huggingface.co/spaces/')) {
-      baseUrl = 'https://neural-thinker-cidadao-ai-backend.hf.space';
-    }
-    
-    setApiUrl(baseUrl);
-    testApiConnection(baseUrl);
+    testApiConnection();
   }, []);
 
-  const testApiConnection = async (baseUrl: string) => {
+  const testApiConnection = async () => {
     try {
       setLoading(true);
       setError(null);
 
-      console.log('Testing API connection to:', `${baseUrl}/health`);
+      console.log('Testing API connection to:', `${API_URL}/health`);
 
-      // Test health endpoint with timeout and proper headers
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
-
-      const response = await fetch(`${baseUrl}/health`, {
+      const response = await fetch(`${API_URL}/health`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-        signal: controller.signal,
-        mode: 'cors', // Explicitly set CORS mode
+        mode: 'cors',
       });
-
-      clearTimeout(timeoutId);
       
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -61,69 +47,51 @@ export default function TestApiPage() {
       setHealthData(data);
     } catch (err) {
       console.error('API Connection Error:', err);
-      if (err instanceof Error) {
-        if (err.name === 'AbortError') {
-          setError('Timeout: A API não respondeu em 10 segundos');
-        } else if (err.message.includes('fetch')) {
-          setError('Erro de rede: Verifique sua conexão ou se a API está online');
-        } else {
-          setError(`Erro: ${err.message}`);
-        }
-      } else {
-        setError('Erro desconhecido ao conectar com a API');
-      }
+      setError(err instanceof Error ? err.message : 'Erro desconhecido');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleRetry = () => {
-    testApiConnection(apiUrl);
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 py-12">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          
+          {/* Header */}
           <div className="text-center mb-12">
-            <div className="inline-block p-4 gradient-emerald-blue rounded-2xl shadow-lg mb-6">
-              <span className="text-3xl">🧪</span>
+            <div className="inline-block p-4 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl shadow-lg mb-6">
+              <span className="text-3xl text-white">⚡</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-              <span className="gradient-text-brazil">
-                Teste de Integração
+              <span className="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
+                Quick Test
               </span>
               <br />
-              <span className="text-gray-800">Cidadão.AI</span>
+              <span className="text-gray-800">Direct API Connection</span>
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
-              Verificação em tempo real da conectividade com o backend
+              Teste direto sem variáveis de ambiente
             </p>
           </div>
 
           {/* API Status Card */}
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-emerald-100 shadow-xl mb-8">
+          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-green-100 shadow-xl mb-8">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 gradient-emerald-blue rounded-2xl flex items-center justify-center">
-                <span className="text-xl text-white">🏥</span>
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center">
+                <span className="text-xl text-white">🚀</span>
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-gray-800">Status da API</h2>
-                <p className="text-gray-600">Endpoint: <code className="text-sm bg-gray-100 px-2 py-1 rounded">{apiUrl}</code></p>
-                <p className="text-xs text-gray-500 mt-1">
-                  Ambiente: {process.env.NODE_ENV} | 
-                  Var: {process.env.NEXT_PUBLIC_API_BASE_URL ? '✅' : '❌'}
-                </p>
-                <p className="text-xs text-gray-400 mt-1">
-                  Original: <code className="bg-gray-100 px-1 rounded">{process.env.NEXT_PUBLIC_API_BASE_URL || 'undefined'}</code>
-                </p>
+                <h2 className="text-2xl font-bold text-gray-800">API Direct Test</h2>
+                <p className="text-gray-600">URL: <code className="text-sm bg-gray-100 px-2 py-1 rounded">{API_URL}</code></p>
+                <p className="text-xs text-green-600 mt-1">✅ URL hardcoded - sem dependência de env vars</p>
               </div>
             </div>
 
             {loading && (
               <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-2xl">
                 <div className="animate-spin w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full"></div>
-                <span className="text-blue-700 font-medium">Testando conexão...</span>
+                <span className="text-blue-700 font-medium">Testando conexão direta...</span>
               </div>
             )}
 
@@ -137,7 +105,7 @@ export default function TestApiPage() {
                 </div>
                 <p className="text-red-600 text-sm mb-4">{error}</p>
                 <button 
-                  onClick={handleRetry}
+                  onClick={testApiConnection}
                   className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium"
                 >
                   Tentar Novamente
@@ -146,18 +114,18 @@ export default function TestApiPage() {
             )}
 
             {healthData && (
-              <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-200">
+              <div className="p-4 bg-green-50 rounded-2xl border border-green-200">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                     <span className="text-white text-sm">✅</span>
                   </div>
-                  <span className="text-emerald-700 font-bold">API Online!</span>
+                  <span className="text-green-700 font-bold">API Online e Funcionando!</span>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
                     <span className="font-medium text-gray-700">Status:</span>
-                    <span className="ml-2 text-emerald-600">{healthData.status}</span>
+                    <span className="ml-2 text-green-600">{healthData.status}</span>
                   </div>
                   <div>
                     <span className="font-medium text-gray-700">Timestamp:</span>
@@ -183,7 +151,7 @@ export default function TestApiPage() {
           {/* Quick Links */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <a 
-              href={`${apiUrl}/docs`}
+              href={`${API_URL}/docs`}
               target="_blank" 
               rel="noopener noreferrer"
               className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100 hover:border-blue-300 hover-lift transition-all duration-200"
@@ -193,12 +161,12 @@ export default function TestApiPage() {
                   📚
                 </div>
                 <h3 className="font-bold text-gray-800 mb-1">Swagger UI</h3>
-                <p className="text-sm text-gray-600">Documentação interativa</p>
+                <p className="text-sm text-gray-600">Documentação oficial</p>
               </div>
             </a>
 
             <a 
-              href={`${apiUrl}/redoc`}
+              href={`${API_URL}/redoc`}
               target="_blank" 
               rel="noopener noreferrer"
               className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-100 hover:border-purple-300 hover-lift transition-all duration-200"
@@ -208,33 +176,33 @@ export default function TestApiPage() {
                   📖
                 </div>
                 <h3 className="font-bold text-gray-800 mb-1">ReDoc</h3>
-                <p className="text-sm text-gray-600">Documentação alternativa</p>
+                <p className="text-sm text-gray-600">Docs alternativas</p>
               </div>
             </a>
 
-            <button 
-              onClick={handleRetry}
-              className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-emerald-100 hover:border-emerald-300 hover-lift transition-all duration-200"
+            <a 
+              href={`${API_URL}/health`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-green-100 hover:border-green-300 hover-lift transition-all duration-200"
             >
               <div className="text-center">
-                <div className="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center mx-auto mb-3">
-                  🔄
+                <div className="w-12 h-12 bg-green-500 text-white rounded-xl flex items-center justify-center mx-auto mb-3">
+                  ❤️
                 </div>
-                <h3 className="font-bold text-gray-800 mb-1">Retestar</h3>
-                <p className="text-sm text-gray-600">Verificar novamente</p>
+                <h3 className="font-bold text-gray-800 mb-1">Health JSON</h3>
+                <p className="text-sm text-gray-600">Raw API response</p>
               </div>
-            </button>
+            </a>
           </div>
 
-          <div className="text-center mt-12">
+          {/* Back Button */}
+          <div className="text-center">
             <Link
-              href="/"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm text-emerald-700 font-bold rounded-2xl border-2 border-emerald-200 hover:border-emerald-300 hover:bg-white hover-lift shadow-lg transition-all duration-300"
+              href="/test-api"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm text-gray-700 font-bold rounded-2xl border-2 border-gray-200 hover:border-gray-300 hover:bg-white hover-lift shadow-lg transition-all duration-300"
             >
-              <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              Voltar para a página inicial
+              ← Voltar para Test API
             </Link>
           </div>
         </div>
