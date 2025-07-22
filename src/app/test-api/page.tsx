@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function TestApiPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -65,12 +67,12 @@ export default function TestApiPage() {
           </div>
 
           <div className="text-center mt-8">
-            <a
+            <Link
               href="/"
               className="text-blue-600 hover:underline"
             >
               ← Voltar para a página inicial
-            </a>
+            </Link>
           </div>
         </div>
       </div>
