@@ -60,7 +60,10 @@ export default function Credits() {
             <div className="text-gray-600 space-y-2">
               <p><strong>Back-end:</strong> Python, FastAPI, LangChain, ChromaDB, FAISS, BERTimbau</p>
               <p><strong>Banco de Dados:</strong> MongoDB</p>
-              <p><strong>Interface:</strong> Gradio, Hugging Face Spaces, Tailwind CSS, HTML5, JavaScript</p>
+              <p><strong>Frontend:</strong> Next.js 15, React 18, TypeScript, Tailwind CSS, Zustand</p>
+              <p><strong>Interface Backend:</strong> Gradio, Hugging Face Spaces</p>
+              <p><strong>Deploy:</strong> Vercel (Frontend), Hugging Face Spaces (Backend)</p>
+              <p><strong>Internacionalização:</strong> next-intl (Português/Inglês)</p>
             </div>
           </div>
 
@@ -118,7 +121,7 @@ export default function Credits() {
               <div>
                 <p className="font-medium text-gray-800">Repositório GitHub – Frontend</p>
                 <a href="https://github.com/anderson-ufrj/cidadao.ai-frontend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block">github.com/anderson-ufrj/cidadao.ai-frontend</a>
-                <p className="text-xs text-gray-500">Interface web com HTML, Tailwind CSS e integração via Gradio/Vercel.</p>
+                <p className="text-xs text-gray-500">Interface web moderna com Next.js, TypeScript, Tailwind CSS e integração REST API.</p>
               </div>
               
               <div>
