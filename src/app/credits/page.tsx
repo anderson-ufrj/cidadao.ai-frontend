@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Credits() {
+export default function Sobre() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50">
       {/* Navigation */}
@@ -17,7 +17,7 @@ export default function Credits() {
 
       {/* Credits Content */}
       <div className="px-6 py-12 max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8">📜 Créditos</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-8">ℹ️ Sobre</h1>
         
         <div className="space-y-8">
           <div className="prose prose-gray max-w-none">
@@ -33,8 +33,8 @@ export default function Credits() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg">
               <h2 className="text-xl font-semibold text-gray-800 mb-4">👨‍💻 Autor</h2>
-              <div className="text-gray-600">
-                <p className="font-medium">Anderson Henrique da Silva</p>
+              <div className="transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
+                <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Anderson Henrique da Silva</p>
                 <p className="text-sm mb-3">Bacharelando em Ciência da Computação | Engenheiro de Sistemas de IA</p>
                 <div className="space-y-2">
                   <a href="https://github.com/anderson-ufrj" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline text-sm">🔗 GitHub</a>
@@ -47,17 +47,17 @@ export default function Credits() {
 
             <div className="bg-gray-50 p-6 rounded-lg">
               <h2 className="text-xl font-semibold text-gray-800 mb-4">🧠 Orientação Acadêmica</h2>
-              <div className="text-gray-600">
-                <p className="font-medium">Profa. Dra. Aracele Garcia de Oliveira Fassbinder</p>
-                <p className="text-sm mb-2">📍 Instituto Federal do Sul de Minas Gerais – Campus Muzambinho</p>
+              <div className="transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
+                <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Profa. Dra. Aracele Garcia de Oliveira Fassbinder</p>
+                <p className="text-sm mb-2 transition-colors duration-300" style={{color: 'var(--text-tertiary)'}}>📍 Instituto Federal do Sul de Minas Gerais – Campus Muzambinho</p>
                 <a href="#" className="text-blue-600 hover:underline text-sm">🔗 Currículo Lattes</a>
               </div>
             </div>
           </div>
 
-          <div className="bg-blue-50 p-6 rounded-lg">
+          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🧰 Tecnologias Utilizadas</h2>
-            <div className="text-gray-600 space-y-2">
+            <div className="space-y-2 transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p><strong>Backend API:</strong> Python, FastAPI, LangChain, ChromaDB, FAISS, BERTimbau</p>
               <p><strong>Banco de Dados:</strong> MongoDB</p>
               <p><strong>Frontend:</strong> Next.js 15, React 18, TypeScript, Tailwind CSS, Zustand</p>
@@ -67,9 +67,9 @@ export default function Credits() {
             </div>
           </div>
 
-          <div className="bg-green-50 p-6 rounded-lg">
+          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🔐 Licenças e Direitos</h2>
-            <div className="text-gray-600 space-y-2 text-sm">
+            <div className="space-y-2 text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p>• Código-fonte licenciado sob Apache License 2.0, exceto onde indicado.</p>
               <p>• Todos os modelos e bibliotecas de terceiros respeitam suas respectivas licenças.</p>
               <p>• Os dados públicos utilizados seguem a Lei de Acesso à Informação (Lei nº 12.527/2011).</p>
@@ -77,9 +77,9 @@ export default function Credits() {
             </div>
           </div>
 
-          <div className="bg-purple-50 p-6 rounded-lg">
+          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🏛️ Apoio Institucional</h2>
-            <div className="text-gray-600 space-y-1 text-sm">
+            <div className="space-y-1 text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p>• Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais</p>
               <p>• Curso de Bacharelado em Ciência da Computação</p>
               <p>• Projeto vinculado à Agenda 2030 – ODS 16: Paz, Justiça e Instituições Eficazes</p>
@@ -87,18 +87,18 @@ export default function Credits() {
             </div>
           </div>
 
-          <div className="bg-indigo-50 p-6 rounded-lg">
+          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">📚 Notas de Pesquisa do Autor</h2>
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-200">
+              <div className="flex items-center gap-4 p-4 rounded-lg border transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border)'}}>
                 <img 
                   src="/author.jpeg" 
                   alt="Anderson Henrique da Silva" 
                   className="w-16 h-16 rounded-full object-cover shadow-lg"
                 />
                 <div className="flex-1">
-                  <p className="font-medium text-gray-800">Notas de Pesquisa Completas</p>
-                  <p className="text-sm text-gray-600 mb-2">Documentação detalhada do processo de pesquisa, metodologia e descobertas durante o desenvolvimento do projeto.</p>
+                  <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Notas de Pesquisa Completas</p>
+                  <p className="text-sm mb-2 transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Documentação detalhada do processo de pesquisa, metodologia e descobertas durante o desenvolvimento do projeto.</p>
                   <a 
                     href="/Notas-de-Pesquisa.pdf" 
                     target="_blank" 
@@ -115,35 +115,16 @@ export default function Credits() {
             </div>
           </div>
 
-          <div className="bg-yellow-50 p-6 rounded-lg">
+          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🌐 Links Oficiais</h2>
             <div className="space-y-4 text-sm">
-              <div>
-                <p className="font-medium text-gray-800">Repositório GitHub – Frontend</p>
-                <a href="https://github.com/anderson-ufrj/cidadao.ai-frontend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block">github.com/anderson-ufrj/cidadao.ai-frontend</a>
-                <p className="text-xs text-gray-500">Interface web moderna com Next.js, TypeScript, Tailwind CSS e integração REST API.</p>
-              </div>
-              
-              <div>
-                <p className="font-medium text-gray-800">Repositório GitHub – Backend</p>
-                <a href="https://github.com/anderson-ufrj/cidadao.ai-backend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block">github.com/anderson-ufrj/cidadao.ai-backend</a>
-                <p className="text-xs text-gray-500">Sistema multi-agente em Python, FastAPI, LangChain, ChromaDB e FAISS.</p>
-              </div>
-              
-              <div>
-                <p className="font-medium text-gray-800">Documentação Técnica dos Algoritmos</p>
-                <a href="https://anderson-ufrj.github.io/cidadao.ai-backend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block">anderson-ufrj.github.io/cidadao.ai-backend</a>
-                <p className="text-xs text-gray-500">Documentação completa dos algoritmos de IA e arquitetura do sistema backend.</p>
-              </div>
-              
-              <div>
-                <p className="font-medium text-gray-800">Demonstração Interativa (Backend)</p>
-                <a href="https://huggingface.co/spaces/neural-thinker/cidadao.ai-backend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block">huggingface.co/spaces/neural-thinker/cidadao.ai-backend</a>
-              </div>
-              
-              <div>
-                <p className="font-medium text-gray-800">Interface Web (Frontend Deploy)</p>
-                <a href="https://cidadao-ai-frontend.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block">cidadao-ai-frontend.vercel.app</a>
+              <div className="flex items-center gap-4 p-4 rounded-lg border transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border)'}}>
+                <div className="text-3xl">📚</div>
+                <div className="flex-1">
+                  <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Hub de Documentação Oficial</p>
+                  <a href="https://anderson-ufrj.github.io/cidadao.ai-docs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block text-base font-medium">anderson-ufrj.github.io/cidadao.ai-docs/</a>
+                  <p className="text-xs mt-1 transition-colors duration-300" style={{color: 'var(--text-tertiary)'}}>Documentação completa do projeto, guias de uso, arquitetura e API.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -153,7 +134,13 @@ export default function Credits() {
         <div className="text-center mt-12">
           <Link
             href="/"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-white/80 backdrop-blur-sm text-emerald-700 font-bold rounded-2xl border-2 border-emerald-200 hover:border-emerald-300 hover:bg-white hover-lift shadow-lg transition-all duration-300"
+            className="group inline-flex items-center gap-3 px-8 py-4 backdrop-blur-sm font-bold rounded-2xl border-2 hover-lift shadow-lg transition-all duration-300"
+            style={{
+              backgroundColor: 'var(--bg-primary)',
+              color: 'var(--text-accent)',
+              borderColor: 'var(--border)',
+              opacity: '0.9'
+            }}
           >
             <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
