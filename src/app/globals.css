@@ -286,3 +286,12 @@ body {
 [data-theme="dark"] .section-indigo { background-color: #334155; border-left: 4px solid #6366f1; }
 [data-theme="dark"] .section-yellow { background-color: #334155; border-left: 4px solid #f59e0b; }
 [data-theme="dark"] .section-white { background-color: #4b5563; }
+
+/* Fix link colors for dark mode */
+[data-theme="dark"] a {
+  color: #60a5fa !important; /* blue-400 for better contrast */
+}
+
+[data-theme="dark"] a:hover {
+  color: #93c5fd !important; /* blue-300 for hover */
+}

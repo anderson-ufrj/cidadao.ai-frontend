@@ -82,7 +82,7 @@ export default function TestApiPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50 py-12">
+    <div className="min-h-screen py-12 transition-all duration-300" style={{background: 'linear-gradient(to bottom right, var(--bg-primary), var(--bg-secondary), var(--bg-tertiary))'}}>
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -94,22 +94,22 @@ export default function TestApiPage() {
                 Teste de Integração
               </span>
               <br />
-              <span className="text-gray-800">Cidadão.AI</span>
+              <span className="transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Cidadão.AI</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+            <p className="text-lg max-w-2xl mx-auto font-medium transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               Verificação em tempo real da conectividade com o backend
             </p>
           </div>
 
           {/* API Status Card */}
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-emerald-100 shadow-xl mb-8">
+          <div className="p-8 rounded-3xl shadow-xl mb-8 backdrop-blur-sm transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', border: '1px solid var(--border)'}}>
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 gradient-emerald-blue rounded-2xl flex items-center justify-center">
                 <span className="text-xl text-white">🏥</span>
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-gray-800">Status da API</h2>
-                <p className="text-gray-600">Endpoint: <code className="text-sm bg-gray-100 px-2 py-1 rounded">{apiUrl}</code></p>
+                <h2 className="text-2xl font-bold transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Status da API</h2>
+                <p className="transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Endpoint: <code className="text-sm px-2 py-1 rounded" style={{backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-primary)'}}>{apiUrl}</code></p>
                 <p className="text-xs text-gray-500 mt-1">
                   Ambiente: {process.env.NODE_ENV} | 
                   Var: {process.env.NEXT_PUBLIC_API_BASE_URL ? '✅' : '❌'}
@@ -186,14 +186,14 @@ export default function TestApiPage() {
               href={`${apiUrl}/docs`}
               target="_blank" 
               rel="noopener noreferrer"
-              className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100 hover:border-blue-300 hover-lift transition-all duration-200"
+              className="group p-6 rounded-2xl hover-lift transition-all duration-300 backdrop-blur-sm" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', border: '1px solid var(--border)'}}
             >
               <div className="text-center">
                 <div className="w-12 h-12 bg-blue-500 text-white rounded-xl flex items-center justify-center mx-auto mb-3">
                   📚
                 </div>
-                <h3 className="font-bold text-gray-800 mb-1">Swagger UI</h3>
-                <p className="text-sm text-gray-600">Documentação interativa</p>
+                <h3 className="font-bold mb-1 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Swagger UI</h3>
+                <p className="text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Documentação interativa</p>
               </div>
             </a>
 
@@ -201,27 +201,27 @@ export default function TestApiPage() {
               href={`${apiUrl}/redoc`}
               target="_blank" 
               rel="noopener noreferrer"
-              className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-100 hover:border-purple-300 hover-lift transition-all duration-200"
+              className="group p-6 rounded-2xl hover-lift transition-all duration-300 backdrop-blur-sm" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', border: '1px solid var(--border)'}}
             >
               <div className="text-center">
                 <div className="w-12 h-12 bg-purple-500 text-white rounded-xl flex items-center justify-center mx-auto mb-3">
                   📖
                 </div>
-                <h3 className="font-bold text-gray-800 mb-1">ReDoc</h3>
-                <p className="text-sm text-gray-600">Documentação alternativa</p>
+                <h3 className="font-bold mb-1 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>ReDoc</h3>
+                <p className="text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Documentação alternativa</p>
               </div>
             </a>
 
             <button 
               onClick={handleRetry}
-              className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-emerald-100 hover:border-emerald-300 hover-lift transition-all duration-200"
+              className="group p-6 rounded-2xl hover-lift transition-all duration-300 backdrop-blur-sm" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', border: '1px solid var(--border)'}}
             >
               <div className="text-center">
                 <div className="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center mx-auto mb-3">
                   🔄
                 </div>
-                <h3 className="font-bold text-gray-800 mb-1">Retestar</h3>
-                <p className="text-sm text-gray-600">Verificar novamente</p>
+                <h3 className="font-bold mb-1 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Retestar</h3>
+                <p className="text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Verificar novamente</p>
               </div>
             </button>
           </div>

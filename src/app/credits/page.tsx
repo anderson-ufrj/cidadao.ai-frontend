@@ -23,15 +23,15 @@ export default function Sobre() {
 
       {/* Credits Content */}
       <div className="px-6 py-12 max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8">ℹ️ Sobre</h1>
+        <h1 className="text-3xl font-bold mb-8 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>ℹ️ Sobre</h1>
         
         <div className="space-y-8">
           <div className="prose prose-gray max-w-none">
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg leading-relaxed transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <strong>Cidadão.AI</strong> é um projeto de pesquisa, software livre e engajamento cívico, idealizado e desenvolvido por <strong>Anderson Henrique da Silva</strong>, como Trabalho de Conclusão de Curso (TCC), sob a orientação da <strong>Profa. Dra. Aracele Garcia de Oliveira Fassbinder</strong>, no <strong>Instituto Federal do Sul de Minas Gerais – Campus Muzambinho</strong>.
             </p>
             
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg leading-relaxed transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               Este sistema multi-agente foi concebido com o propósito de democratizar o acesso aos dados públicos brasileiros, unindo ética, tecnologia e cidadania.
             </p>
           </div>
