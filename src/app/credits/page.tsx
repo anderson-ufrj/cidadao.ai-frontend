@@ -58,11 +58,11 @@ export default function Credits() {
           <div className="bg-blue-50 p-6 rounded-lg">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🧰 Tecnologias Utilizadas</h2>
             <div className="text-gray-600 space-y-2">
-              <p><strong>Back-end:</strong> Python, FastAPI, LangChain, ChromaDB, FAISS, BERTimbau</p>
+              <p><strong>Backend API:</strong> Python, FastAPI, LangChain, ChromaDB, FAISS, BERTimbau</p>
               <p><strong>Banco de Dados:</strong> MongoDB</p>
               <p><strong>Frontend:</strong> Next.js 15, React 18, TypeScript, Tailwind CSS, Zustand</p>
-              <p><strong>Interface Backend:</strong> Gradio, Hugging Face Spaces</p>
-              <p><strong>Deploy:</strong> Vercel (Frontend), Hugging Face Spaces (Backend)</p>
+              <p><strong>API Documentation:</strong> Swagger UI, ReDoc (automático)</p>
+              <p><strong>Deploy:</strong> Vercel (Frontend), Hugging Face Spaces (Backend API)</p>
               <p><strong>Internacionalização:</strong> next-intl (Português/Inglês)</p>
             </div>
           </div>
