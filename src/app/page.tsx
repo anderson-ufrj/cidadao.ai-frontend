@@ -161,7 +161,7 @@ export default function Home() {
           </span>
         </a>
         <a
-          href="/test-api"
+          href="/api-test"
           className="group gradient-green-yellow text-white px-5 py-3 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"
           title="Testar API"
         >
