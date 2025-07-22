@@ -38,10 +38,10 @@ export default function Sobre() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="section-gray p-6 rounded-lg transition-all duration-300">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">👨‍💻 Autor</h2>
+              <h2 className="text-xl font-semibold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>👨‍💻 Autor</h2>
               <div className="transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
                 <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Anderson Henrique da Silva</p>
-                <p className="text-sm mb-3">Bacharelando em Ciência da Computação | Engenheiro de Sistemas de IA</p>
+                <p className="text-sm mb-3 transition-colors duration-300" style={{color: 'var(--text-tertiary)'}}>Bacharelando em Ciência da Computação | Engenheiro de Sistemas de IA</p>
                 <div className="space-y-2">
                   <a href="https://github.com/anderson-ufrj" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline text-sm">🔗 GitHub</a>
                   <a href="https://huggingface.co/neural-thinker" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline text-sm">🔗 Hugging Face</a>
@@ -52,7 +52,7 @@ export default function Sobre() {
             </div>
 
             <div className="section-gray p-6 rounded-lg transition-all duration-300">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">🧠 Orientação Acadêmica</h2>
+              <h2 className="text-xl font-semibold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>🧠 Orientação Acadêmica</h2>
               <div className="transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
                 <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Profa. Dra. Aracele Garcia de Oliveira Fassbinder</p>
                 <p className="text-sm mb-2 transition-colors duration-300" style={{color: 'var(--text-tertiary)'}}>📍 Instituto Federal do Sul de Minas Gerais – Campus Muzambinho</p>
@@ -62,7 +62,7 @@ export default function Sobre() {
           </div>
 
           <div className="section-blue p-6 rounded-lg transition-all duration-300">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">🧰 Tecnologias Utilizadas</h2>
+            <h2 className="text-xl font-semibold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>🧰 Tecnologias Utilizadas</h2>
             <div className="space-y-2 transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p><strong>Backend API:</strong> Python, FastAPI, LangChain, ChromaDB, FAISS, BERTimbau</p>
               <p><strong>Banco de Dados:</strong> MongoDB</p>
@@ -74,7 +74,7 @@ export default function Sobre() {
           </div>
 
           <div className="section-green p-6 rounded-lg transition-all duration-300">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">🔐 Licenças e Direitos</h2>
+            <h2 className="text-xl font-semibold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>🔐 Licenças e Direitos</h2>
             <div className="space-y-2 text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p>• Código-fonte licenciado sob Apache License 2.0.</p>
               <p>• Todos os modelos e bibliotecas de terceiros respeitam suas respectivas licenças.</p>
@@ -84,7 +84,7 @@ export default function Sobre() {
           </div>
 
           <div className="section-purple p-6 rounded-lg transition-all duration-300">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">🏛️ Apoio Institucional</h2>
+            <h2 className="text-xl font-semibold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>🏛️ Apoio Institucional</h2>
             <div className="space-y-1 text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p>• Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais</p>
               <p>• Curso de Bacharelado em Ciência da Computação</p>
@@ -94,7 +94,7 @@ export default function Sobre() {
           </div>
 
           <div className="section-indigo p-6 rounded-lg transition-all duration-300">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">📚 Notas de Pesquisa do Autor</h2>
+            <h2 className="text-xl font-semibold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>📚 Notas de Pesquisa do Autor</h2>
             <div className="space-y-4">
               <div className="section-white flex items-center gap-4 p-4 rounded-lg transition-all duration-300 border border-indigo-200">
                 <img 
@@ -122,7 +122,7 @@ export default function Sobre() {
           </div>
 
           <div className="section-yellow p-6 rounded-lg transition-all duration-300">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">🌐 Links Oficiais</h2>
+            <h2 className="text-xl font-semibold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>🌐 Links Oficiais</h2>
             <div className="space-y-4 text-sm">
               <div className="section-white flex items-center gap-4 p-4 rounded-lg transition-all duration-300 border border-yellow-200">
                 <div className="text-3xl">📚</div>
