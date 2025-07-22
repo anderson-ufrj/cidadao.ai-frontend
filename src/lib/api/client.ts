@@ -174,6 +174,15 @@ class ApiClient {
     return response.data.data;
   }
 
+  // Blob download method
+  async getBlob(url: string, config?: AxiosRequestConfig): Promise<Blob> {
+    const response = await this.client.get(url, {
+      ...config,
+      responseType: 'blob'
+    });
+    return response.data;
+  }
+
   // Server-Sent Events helper
   createEventSource(url: string): EventSource {
     const fullUrl = `${this.getBaseUrl()}${url}`;

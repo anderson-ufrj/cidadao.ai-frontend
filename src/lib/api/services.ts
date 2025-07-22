@@ -119,11 +119,7 @@ export const reportService = {
 
   // Download report (returns blob URL)
   async downloadReport(id: string): Promise<string> {
-    const response = await apiClient.client.get(API_ENDPOINTS.REPORTS.DOWNLOAD(id), {
-      responseType: 'blob',
-    });
-    
-    const blob = new Blob([response.data]);
+    const blob = await apiClient.getBlob(API_ENDPOINTS.REPORTS.DOWNLOAD(id));
     return URL.createObjectURL(blob);
   },
 };
