@@ -84,6 +84,23 @@ body {
   background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-yellow) 100%);
 }
 
+/* Gradient text classes with proper transparency */
+.gradient-text-brazil {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 50%, var(--primary-yellow) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.gradient-text-emerald-blue {
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--primary-blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 /* Smooth transitions */
 * {
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;

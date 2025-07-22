@@ -11,14 +11,33 @@ export default function Home() {
           <div className="w-10 h-10 gradient-emerald-blue rounded-xl flex items-center justify-center hover-scale shadow-lg">
             <span className="text-white font-bold text-lg">🏛️</span>
           </div>
-          <span className="font-bold text-2xl gradient-emerald-blue bg-clip-text text-transparent tracking-tight">
+          <span className="font-bold text-2xl gradient-text-emerald-blue tracking-tight">
             Cidadão.AI
           </span>
         </div>
-        <div className="hidden md:flex space-x-8">
-          <a href="#about" className="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-200 hover:scale-105">
-            {t('nav.about')}
+        <div className="hidden md:flex space-x-4">
+          <a 
+            href="#about" 
+            className="group gradient-emerald-blue text-white px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"
+          >
+            <span className="flex items-center gap-2">
+              {t('nav.about')}
+              <svg className="w-4 h-4 group-hover:translate-y-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </span>
           </a>
+          <button 
+            className="group gradient-green-yellow text-white px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"
+            title="Alternar tema"
+          >
+            <span className="flex items-center gap-2">
+              🌙 Tema
+              <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" />
+              </svg>
+            </span>
+          </button>
         </div>
       </nav>
 
@@ -32,7 +51,7 @@ export default function Home() {
             </div>
           </div>
           <h1 className="text-6xl md:text-7xl font-bold mb-8 tracking-tight">
-            <span className="gradient-brazil bg-clip-text text-transparent animate-gradient block mb-2">
+            <span className="gradient-text-brazil animate-gradient block mb-2">
               {t('hero.title')}
             </span>
             <span className="text-gray-800 font-semibold">
@@ -71,7 +90,7 @@ export default function Home() {
             </div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800 tracking-tight">
-            <span className="gradient-emerald-blue bg-clip-text text-transparent">
+            <span className="gradient-text-emerald-blue">
               {t('about.title')}
             </span>
           </h2>
@@ -110,8 +129,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Navigation Links (bottom) */}
-      <div className="fixed bottom-6 left-6 z-40 flex flex-col space-y-3">
+      {/* Navigation Links (bottom right) */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
         <a
           href="/credits"
           className="group gradient-emerald-blue text-white px-5 py-3 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"

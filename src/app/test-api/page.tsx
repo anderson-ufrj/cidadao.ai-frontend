@@ -10,7 +10,7 @@ export default function TestApiPage() {
               <span className="text-3xl">🧪</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-              <span className="gradient-brazil bg-clip-text text-transparent">
+              <span className="gradient-text-brazil">
                 Teste de Integração
               </span>
               <br />
