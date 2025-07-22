@@ -31,7 +31,7 @@ export default function Sobre() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="section-gray p-6 rounded-lg transition-all duration-300">
               <h2 className="text-xl font-semibold text-gray-800 mb-4">👨‍💻 Autor</h2>
               <div className="transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
                 <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Anderson Henrique da Silva</p>
@@ -45,7 +45,7 @@ export default function Sobre() {
               </div>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="section-gray p-6 rounded-lg transition-all duration-300">
               <h2 className="text-xl font-semibold text-gray-800 mb-4">🧠 Orientação Acadêmica</h2>
               <div className="transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
                 <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Profa. Dra. Aracele Garcia de Oliveira Fassbinder</p>
@@ -55,7 +55,7 @@ export default function Sobre() {
             </div>
           </div>
 
-          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
+          <div className="section-blue p-6 rounded-lg transition-all duration-300">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🧰 Tecnologias Utilizadas</h2>
             <div className="space-y-2 transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p><strong>Backend API:</strong> Python, FastAPI, LangChain, ChromaDB, FAISS, BERTimbau</p>
@@ -67,7 +67,7 @@ export default function Sobre() {
             </div>
           </div>
 
-          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
+          <div className="section-green p-6 rounded-lg transition-all duration-300">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🔐 Licenças e Direitos</h2>
             <div className="space-y-2 text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p>• Código-fonte licenciado sob Apache License 2.0, exceto onde indicado.</p>
@@ -77,7 +77,7 @@ export default function Sobre() {
             </div>
           </div>
 
-          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
+          <div className="section-purple p-6 rounded-lg transition-all duration-300">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🏛️ Apoio Institucional</h2>
             <div className="space-y-1 text-sm transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
               <p>• Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais</p>
@@ -87,10 +87,10 @@ export default function Sobre() {
             </div>
           </div>
 
-          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
+          <div className="section-indigo p-6 rounded-lg transition-all duration-300">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">📚 Notas de Pesquisa do Autor</h2>
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 rounded-lg border transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border)'}}>
+              <div className="section-white flex items-center gap-4 p-4 rounded-lg transition-all duration-300 border border-indigo-200">
                 <img 
                   src="/author.jpeg" 
                   alt="Anderson Henrique da Silva" 
@@ -115,10 +115,10 @@ export default function Sobre() {
             </div>
           </div>
 
-          <div className="p-6 rounded-lg transition-all duration-300" style={{backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border)'}}>
+          <div className="section-yellow p-6 rounded-lg transition-all duration-300">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">🌐 Links Oficiais</h2>
             <div className="space-y-4 text-sm">
-              <div className="flex items-center gap-4 p-4 rounded-lg border transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border)'}}>
+              <div className="section-white flex items-center gap-4 p-4 rounded-lg transition-all duration-300 border border-yellow-200">
                 <div className="text-3xl">📚</div>
                 <div className="flex-1">
                   <p className="font-medium transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Hub de Documentação Oficial</p>

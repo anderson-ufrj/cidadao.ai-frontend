@@ -269,3 +269,20 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.3);
 }
+
+/* Theme-aware color sections */
+.section-gray { background-color: #f9fafb; }
+.section-blue { background-color: #eff6ff; }
+.section-green { background-color: #f0fdf4; }
+.section-purple { background-color: #faf5ff; }
+.section-indigo { background-color: #eef2ff; }
+.section-yellow { background-color: #fefce8; }
+.section-white { background-color: #ffffff; }
+
+[data-theme="dark"] .section-gray { background-color: #374151; }
+[data-theme="dark"] .section-blue { background-color: #1e3a8a; opacity: 0.3; }
+[data-theme="dark"] .section-green { background-color: #14532d; opacity: 0.3; }
+[data-theme="dark"] .section-purple { background-color: #581c87; opacity: 0.3; }
+[data-theme="dark"] .section-indigo { background-color: #312e81; opacity: 0.3; }
+[data-theme="dark"] .section-yellow { background-color: #713f12; opacity: 0.3; }
+[data-theme="dark"] .section-white { background-color: #4b5563; }
