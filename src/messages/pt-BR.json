@@ -20,7 +20,7 @@
     "title": "Recursos Principais",
     "multiAgent": {
       "title": "IA Multi-Agente",
-      "description": "Sistema distribuído com 8 agentes especializados para análise automatizada de dados públicos."
+      "description": "Sistema distribuído com múltiplos agentes especializados para análise automatizada de dados públicos."
     },
     "anomaly": {
       "title": "Detecção de Anomalias",
