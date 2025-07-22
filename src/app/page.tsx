@@ -5,29 +5,18 @@ export default function Home() {
   const t = useTranslations();
   
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-emerald-50 to-blue-50">
+    <main className="min-h-screen transition-all duration-300" style={{background: 'linear-gradient(to bottom right, var(--bg-primary), var(--bg-secondary), var(--bg-tertiary))'}}>
       {/* Navigation */}
-      <nav className="px-6 py-4 flex justify-between items-center bg-white/80 backdrop-blur-sm border-b border-emerald-200 sticky top-0 z-50">
+      <nav className="px-6 py-4 flex justify-between items-center backdrop-blur-sm border-b sticky top-0 z-50 transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.9', borderColor: 'var(--border)'}}>
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 gradient-emerald-blue rounded-xl flex items-center justify-center hover-scale shadow-lg">
             <span className="text-white font-bold text-lg">🏛️</span>
           </div>
-          <span className="font-bold text-2xl gradient-text-emerald-blue tracking-tight">
+          <span className="font-bold text-2xl tracking-tight transition-colors duration-300" style={{color: 'var(--text-primary)'}}>
             Cidadão.AI
           </span>
         </div>
-        <div className="hidden md:flex space-x-4">
-          <a 
-            href="#about" 
-            className="group gradient-emerald-blue text-white px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"
-          >
-            <span className="flex items-center gap-2">
-              {t('nav.about')}
-              <svg className="w-4 h-4 group-hover:translate-y-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </span>
-          </a>
+        <div className="flex md:flex space-x-4">
           <ThemeToggle />
         </div>
       </nav>
@@ -45,11 +34,11 @@ export default function Home() {
             <span className="gradient-text-brazil animate-gradient block mb-2">
               {t('hero.title')}
             </span>
-            <span className="text-gray-800 font-semibold">
+            <span className="font-semibold transition-colors duration-300" style={{color: 'var(--text-primary)'}}>
               {t('hero.subtitle')}
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto font-medium">
+          <p className="text-xl mb-12 leading-relaxed max-w-3xl mx-auto font-medium transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
             {t('hero.description')}
           </p>
           <div className="flex flex-col lg:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
@@ -96,8 +85,8 @@ export default function Home() {
 
 
       {/* About Section */}
-      <section id="about" className="px-6 py-20 bg-gradient-to-br from-emerald-50 via-white to-blue-50 relative">
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
+      <section id="about" className="px-6 py-20 relative transition-all duration-300" style={{background: 'linear-gradient(to bottom right, var(--bg-secondary), var(--bg-primary), var(--bg-tertiary))'}}>
+        <div className="absolute inset-0 backdrop-blur-sm transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)', opacity: '0.4'}}></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="mb-8">
             <div className="inline-block p-4 gradient-emerald-blue rounded-2xl shadow-lg mb-6">
@@ -106,71 +95,66 @@ export default function Home() {
               </svg>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight transition-colors duration-300" style={{color: 'var(--text-primary)'}}>
             <span className="gradient-text-emerald-blue">
               {t('about.title')}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed font-medium max-w-3xl mx-auto">
+          <p className="text-xl leading-relaxed font-medium max-w-3xl mx-auto transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>
             {t('about.description')}
           </p>
         </div>
       </section>
 
       {/* Features Grid */}
-      <section className="px-6 py-20 bg-white">
+      <section className="px-6 py-20 transition-all duration-300" style={{backgroundColor: 'var(--bg-primary)'}}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-3xl border border-purple-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
+            <div className="group p-8 rounded-3xl card-hover shadow-sm transition-all duration-300" style={{background: 'var(--card-bg)', border: '1px solid var(--card-border)'}}>
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🔍</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Análise Inteligente</h3>
-              <p className="text-gray-600 leading-relaxed">Detecta anomalias em contratos e despesas públicas usando IA avançada.</p>
+              <h3 className="text-xl font-bold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Análise Inteligente</h3>
+              <p className="leading-relaxed transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Detecta anomalias em contratos e despesas públicas usando IA avançada.</p>
             </div>
-            <div className="group p-8 bg-gradient-to-br from-orange-50 to-white rounded-3xl border border-orange-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
+            <div className="group p-8 rounded-3xl card-hover shadow-sm transition-all duration-300" style={{background: 'var(--card-bg)', border: '1px solid var(--card-border)'}}>
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">📊</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Relatórios Visuais</h3>
-              <p className="text-gray-600 leading-relaxed">Gráficos e dashboards interativos para visualizar dados públicos.</p>
+              <h3 className="text-xl font-bold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Relatórios Visuais</h3>
+              <p className="leading-relaxed transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Gráficos e dashboards interativos para visualizar dados públicos.</p>
             </div>
-            <div className="group p-8 bg-gradient-to-br from-cyan-50 to-white rounded-3xl border border-cyan-100 hover-lift shadow-sm hover:shadow-xl transition-all duration-300">
+            <div className="group p-8 rounded-3xl card-hover shadow-sm transition-all duration-300" style={{background: 'var(--card-bg)', border: '1px solid var(--card-border)'}}>
               <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏛️</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Transparência Total</h3>
-              <p className="text-gray-600 leading-relaxed">Acesso simplificado aos dados governamentais brasileiros.</p>
+              <h3 className="text-xl font-bold mb-4 transition-colors duration-300" style={{color: 'var(--text-primary)'}}>Transparência Total</h3>
+              <p className="leading-relaxed transition-colors duration-300" style={{color: 'var(--text-secondary)'}}>Acesso simplificado aos dados governamentais brasileiros.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Navigation Links (bottom right) */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col space-y-4">
         <a
           href="/credits"
-          className="group gradient-emerald-blue text-white px-5 py-3 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"
+          className="group w-14 h-14 gradient-emerald-blue text-white rounded-full shadow-xl hover:shadow-2xl hover-lift flex items-center justify-center backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-110"
           title="Ver créditos"
         >
-          <span className="flex items-center gap-2">
-            📜 Créditos
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-            </svg>
-          </span>
+          <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+          </svg>
         </a>
         <a
           href="/test-api"
-          className="group gradient-green-yellow text-white px-5 py-3 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"
+          className="group w-14 h-14 gradient-green-yellow text-white rounded-full shadow-xl hover:shadow-2xl hover-lift flex items-center justify-center backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-110"
           title="Testar API"
         >
-          <span className="flex items-center gap-2">
-            🧪 Teste API
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-            </svg>
-          </span>
+          <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
         </a>
       </div>
     </main>

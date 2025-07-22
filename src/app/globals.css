@@ -2,35 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /* Brazilian-inspired color palette */
+  /* Light theme variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;      /* slate-50 */
+  --bg-tertiary: #f1f5f9;       /* slate-100 */
+  --text-primary: #0f172a;      /* slate-900 */
+  --text-secondary: #475569;    /* slate-600 */
+  --text-tertiary: #64748b;     /* slate-500 */
+  --text-accent: #10b981;       /* emerald-500 */
+  --border: #e2e8f0;            /* slate-200 */
+  --border-light: #cbd5e1;      /* slate-300 */
+  --bg-hover: #f1f5f9;          /* slate-100 */
+  --gradient-start: #10b981;    /* emerald-500 */
+  --gradient-end: #059669;      /* emerald-600 */
+  --card-bg: rgba(16, 185, 129, 0.05);
+  --card-border: rgba(16, 185, 129, 0.2);
+  --card-hover-bg: rgba(16, 185, 129, 0.1);
+  --card-hover-border: rgba(16, 185, 129, 0.5);
+  
+  /* Legacy variables for backward compatibility */
   --primary-green: #10b981;
   --primary-blue: #3b82f6;
   --primary-yellow: #f59e0b;
   --accent-emerald: #059669;
   --accent-indigo: #4f46e5;
-  
-  /* Background and text */
-  --background: #ffffff;
-  --foreground: #1f2937;
-  --muted: #f9fafb;
-  --muted-foreground: #6b7280;
-  
-  /* Semantic colors */
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+  --muted: var(--bg-secondary);
+  --muted-foreground: var(--text-tertiary);
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
   --info: #3b82f6;
-  
-  /* Additional accent colors for variety */
   --purple: #8b5cf6;
   --orange: #f97316;
   --pink: #ec4899;
   --cyan: #06b6d4;
-  
-  /* Borders and surfaces */
-  --border: #e5e7eb;
-  --surface: #ffffff;
-  --surface-hover: #f3f4f6;
+  --surface: var(--bg-primary);
+  --surface-hover: var(--bg-hover);
 }
 
 @theme inline {
@@ -54,17 +63,31 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Dark theme using data attribute */
 [data-theme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #f3f4f6;
-  --muted: #111827;
-  --muted-foreground: #9ca3af;
-  --border: #374151;
-  --surface: #1f2937;
-  --surface-hover: #374151;
+  --bg-primary: #0f172a;        /* slate-900 */
+  --bg-secondary: #1e293b;      /* slate-800 */
+  --bg-tertiary: #334155;       /* slate-700 */
+  --text-primary: #f8fafc;      /* slate-50 */
+  --text-secondary: #cbd5e1;    /* slate-300 */
+  --text-tertiary: #94a3b8;     /* slate-400 */
+  --text-accent: #10b981;       /* emerald-500 */
+  --border: #334155;            /* slate-700 */
+  --border-light: #475569;      /* slate-600 */
+  --bg-hover: #334155;          /* slate-700 */
+  --gradient-start: #10b981;    /* emerald-500 */
+  --gradient-end: #059669;      /* emerald-600 */
+  --card-bg: rgba(16, 185, 129, 0.05);
+  --card-border: rgba(16, 185, 129, 0.2);
+  --card-hover-bg: rgba(16, 185, 129, 0.1);
+  --card-hover-border: rgba(16, 185, 129, 0.5);
   
-  /* Dark theme specific colors */
+  /* Legacy variables update */
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+  --muted: var(--bg-secondary);
+  --muted-foreground: var(--text-tertiary);
+  --surface: var(--bg-primary);
+  --surface-hover: var(--bg-hover);
   --primary-green: #34d399;
   --primary-blue: #60a5fa;
   --primary-yellow: #fbbf24;
@@ -72,17 +95,31 @@
   --accent-indigo: #818cf8;
 }
 
-/* Light theme (default) */
 [data-theme="light"] {
-  --background: #ffffff;
-  --foreground: #1f2937;
-  --muted: #f9fafb;
-  --muted-foreground: #6b7280;
-  --border: #e5e7eb;
-  --surface: #ffffff;
-  --surface-hover: #f3f4f6;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;      /* slate-50 */
+  --bg-tertiary: #f1f5f9;       /* slate-100 */
+  --text-primary: #0f172a;      /* slate-900 */
+  --text-secondary: #475569;    /* slate-600 */
+  --text-tertiary: #64748b;     /* slate-500 */
+  --text-accent: #10b981;       /* emerald-500 */
+  --border: #e2e8f0;            /* slate-200 */
+  --border-light: #cbd5e1;      /* slate-300 */
+  --bg-hover: #f1f5f9;          /* slate-100 */
+  --gradient-start: #10b981;    /* emerald-500 */
+  --gradient-end: #059669;      /* emerald-600 */
+  --card-bg: rgba(16, 185, 129, 0.05);
+  --card-border: rgba(16, 185, 129, 0.2);
+  --card-hover-bg: rgba(16, 185, 129, 0.1);
+  --card-hover-border: rgba(16, 185, 129, 0.5);
   
-  /* Light theme specific colors */
+  /* Legacy variables */
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+  --muted: var(--bg-secondary);
+  --muted-foreground: var(--text-tertiary);
+  --surface: var(--bg-primary);
+  --surface-hover: var(--bg-hover);
   --primary-green: #10b981;
   --primary-blue: #3b82f6;
   --primary-yellow: #f59e0b;
@@ -223,4 +260,12 @@ body {
 
 .bg-gradient-theme-soft {
   background: linear-gradient(135deg, var(--background) 0%, var(--surface) 50%, var(--muted) 100%);
+}
+
+/* Enhanced card hover effects */
+.card-hover:hover {
+  background: var(--card-hover-bg) !important;
+  border-color: var(--card-hover-border) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.3);
 }

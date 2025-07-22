@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 export default function DebugApiPage() {
-  const [results, setResults] = useState<Array<{url: string, status: string, data?: any, error?: string}>>([]);
+  const [results, setResults] = useState<Array<{url: string, status: string, data?: string | object, error?: string}>>([]);
   const [testing, setTesting] = useState(false);
 
   const testUrls = [

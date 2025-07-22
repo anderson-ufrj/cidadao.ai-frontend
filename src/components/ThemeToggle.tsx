@@ -9,15 +9,13 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <button 
-        className="group gradient-green-yellow text-white px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"
+        className="w-12 h-12 rounded-full gradient-green-yellow text-white shadow-lg flex items-center justify-center backdrop-blur-sm border border-white/20"
         disabled
       >
-        <span className="flex items-center gap-2">
-          🌙 Tema
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" />
-          </svg>
-        </span>
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="m12 1-3 3-3-3 3-3 3 3zm0 22-3 3-3-3 3-3 3 3zm-10-10-3-3 3-3v6zm22 0-3-3 3-3v6z"/>
+        </svg>
       </button>
     );
   }
@@ -25,16 +23,20 @@ export default function ThemeToggle() {
   return (
     <button 
       onClick={toggleTheme}
-      className="group gradient-green-yellow text-white px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl hover-lift text-sm font-bold backdrop-blur-sm border border-white/20"
+      className="group w-12 h-12 rounded-full gradient-green-yellow text-white shadow-lg hover:shadow-2xl hover-lift flex items-center justify-center backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-110"
       title={`Alternar para tema ${theme === 'light' ? 'escuro' : 'claro'}`}
       aria-label={`Alternar para tema ${theme === 'light' ? 'escuro' : 'claro'}`}
     >
-      <span className="flex items-center gap-2">
-        {theme === 'light' ? '🌙' : '☀️'} {theme === 'light' ? 'Escuro' : 'Claro'}
-        <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" />
+      {theme === 'light' ? (
+        <svg className="w-5 h-5 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
-      </span>
+      ) : (
+        <svg className="w-5 h-5 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+      )}
     </button>
   );
 }
