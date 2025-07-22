@@ -17,7 +17,7 @@ export default function TestApiPage() {
   const [apiUrl, setApiUrl] = useState<string>('');
 
   useEffect(() => {
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://neural-thinker-cidadao-ai-backend.hf.space';
     setApiUrl(baseUrl);
     testApiConnection(baseUrl);
   }, []);
@@ -27,17 +27,44 @@ export default function TestApiPage() {
       setLoading(true);
       setError(null);
 
-      // Test health endpoint
-      const response = await fetch(`${baseUrl}/health`);
+      console.log('Testing API connection to:', `${baseUrl}/health`);
+
+      // Test health endpoint with timeout and proper headers
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
+      const response = await fetch(`${baseUrl}/health`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        signal: controller.signal,
+        mode: 'cors', // Explicitly set CORS mode
+      });
+
+      clearTimeout(timeoutId);
       
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
 
       const data = await response.json();
+      console.log('API Response:', data);
       setHealthData(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Erro desconhecido');
+      console.error('API Connection Error:', err);
+      if (err instanceof Error) {
+        if (err.name === 'AbortError') {
+          setError('Timeout: A API não respondeu em 10 segundos');
+        } else if (err.message.includes('fetch')) {
+          setError('Erro de rede: Verifique sua conexão ou se a API está online');
+        } else {
+          setError(`Erro: ${err.message}`);
+        }
+      } else {
+        setError('Erro desconhecido ao conectar com a API');
+      }
     } finally {
       setLoading(false);
     }
@@ -76,6 +103,10 @@ export default function TestApiPage() {
               <div>
                 <h2 className="text-2xl font-bold text-gray-800">Status da API</h2>
                 <p className="text-gray-600">Endpoint: <code className="text-sm bg-gray-100 px-2 py-1 rounded">{apiUrl}</code></p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Ambiente: {process.env.NODE_ENV} | 
+                  Var: {process.env.NEXT_PUBLIC_API_BASE_URL ? '✅' : '❌'}
+                </p>
               </div>
             </div>
 
